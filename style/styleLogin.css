@@ -70,12 +70,6 @@ label{
     color: var(--text-color);
     font-size: var(--font-size-label);
 }
-.password {
-    
-}
-.btnLogin {
-
-}
 #Login{
     font-size: var(--font-size-label);
     padding: 10px 20px;
