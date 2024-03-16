@@ -1,0 +1,138 @@
+:root {
+    --text-color: white;
+    --font-size-label: 1.2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.RegisterPanel {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgba(88, 88, 88, 0), rgba(255, 255, 255, 0.5)), url('../image/bd77553bd334c9b5a10cd0f745e40043.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 470px;
+    margin-top: 10vh;
+}
+
+.revertHome {
+    margin-top: 10%;
+    width: 100%;
+    color: var(--text-color);
+    padding-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    column-gap: 5px;
+}
+
+.revertHome>i {
+    transform: rotate(180deg);
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.Register_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    row-gap: 20px;
+}
+
+.Register__title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+    font-weight: bold;
+    margin-top: 30px;
+
+}
+
+.account,
+.password,
+.Re__password,
+.fullanme, .job, .addressArea {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#numberphone,
+#pass,
+#Re__pass,
+#name,
+#nameJob,
+#address {
+    width: 370px;
+    font-size: var(--font-size-label);
+    padding: 10px;
+}
+
+.for_me {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.dateOfBirth {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.sex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#chooseSex{
+    display: flex;
+    gap: 20px;
+    font-size: var(--font-size-label);
+}
+label, .lable_sex{
+    font-size: var(--font-size-label);
+    color: var(--text-color);
+}
+
+
+#Register {
+    font-size: var(--font-size-label);
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.revertLogin {
+    width: 100%;
+    color: var(--text-color);
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    column-gap: 5px;
+    margin-bottom: 10%;
+}
+#date{
+    padding: 10px;
+}
+

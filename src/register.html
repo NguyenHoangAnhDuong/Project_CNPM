@@ -5,36 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../image/Logo_HCMUAF.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../vendor/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendor/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="../style/styleRegister.css">
     <title>Đăng ký</title>
 </head>
 
 <body>
     <div class="RegisterPanel">
+    <a href="" class="revertHome"><i class="fa-solid fa-arrow-right-to-bracket"></i>Trang chủ</a>
         <form class="Register_content">
-            <span class="Register__title">Đăng nhập</span>
+            <span class="Register__title">Đăng Ký</span>
             <div class="account">
-                <label for="numberphone">Số điện thoại</label>
-                <input id="numberphone" type="text" placeholder="Nhập số điện thoại của bạn">
+                <label for="numberphone">Số điện thoại:</label>
+                <input id="numberphone" type="text" placeholder="Nhập số điện thoại">
             </div>
             <div class="password">
-                <label for="pass">Mật khẩu</label>
-                <input id="pass" type="password" placeholder="Nhập mật khẩu của bạn">
+                <label for="pass">Mật khẩu:</label>
+                <input id="pass" type="password" placeholder="Nhập mật khẩu">
             </div>
             <div class="Re__password">
-                <label for="Re__pass">Mật khẩu</label>
-                <input id="Re__pass" type="password" placeholder="Nhập mật khẩu của bạn">
+                <label for="Re__pass">Nhập lại mật khẩu:</label>
+                <input id="Re__pass" type="password" placeholder="Nhập lại mật khẩu">
             </div>
             <div class="fullanme">
-                <label for="name">Mật khẩu</label>
-                <input id="name" type="password" placeholder="Nhập mật khẩu của bạn">
+                <label for="name">Họ và tên:</label>
+                <input id="name" type="text" placeholder="Nhập họ và tên">
             </div>
             <div class="for_me">
                 <div class="dateOfBirth">
-                    <label for="date">Mật khẩu</label>
-                    <input id="date" type="password" placeholder="Nhập mật khẩu của bạn">
+                    <label for="date">Ngày sinh:</label>
+                    <input id="date" type="date">
                 </div>
                 <div class="sex">
-                    <span>Giới tính</span>
+                    <span class="lable_sex">Giới tính:</span>
                     <div id="chooseSex">
                         <div class="chooseSex__op1">
                             <input type="radio" name="opSex" id="male">
@@ -46,12 +50,21 @@
                        </div>
                     </div>
                 </div>
+                
             </div>
-            <div class="btnLogin">
-                <button type="submit" id="Login">Đăng nhập</button>
+            <div class="job">
+                <label for="nameJob">Công việc:</label>
+                <input id="nameJob" type="password" placeholder="Nhập công việc hiện tại">
+            </div>
+            <div class="addressArea">
+                <label for="address">Địa chỉ:</label>
+                <input id="address" type="password" placeholder="Nhập địa chỉ">
+            </div>
+            <div class="btnRegister">
+                <button type="submit" id="Register">Đăng ký</button>
             </div>
         </form>
-        <a class="createAccount" href="register.html">Tạo tài khoản <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="revertLogin" href="login.html"><i class="fa-solid fa-arrow-left"></i>Đăng nhập</a>
     </div>
 </body>
 
