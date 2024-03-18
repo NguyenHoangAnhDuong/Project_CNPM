@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    row-gap: 90px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.range {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    row-gap: 20px;
+}
+
+.range label {
+    font-size: 1.2rem;
+}
+
+#Panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(86, 86, 86, 0.5)), url('../image/abef54f8e36bcb657b8738253bbf94cb.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
+.content__Title {
+    margin-top: 10%;
+}
+
+.title {
+    font-size: 2.5rem;
+}
+
+.cube {
+    position: relative;
+    width: 300px;
+}
+
+.slider-range-min {
+    width: 94%;
+    left: 3%;
+    top: 27px;
+    margin: 0px;
+    z-index: 999;
+}
+
+.ui-slider {
+    height: 5px;
+    border: none;
+    background: rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.25),
+        inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.25),
+        inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.25),
+        inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.ui-slider:before,
+.ui-slider:after {
+    content: 'IIIIIII';
+    position: absolute;
+    left: 2px;
+    width: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.3);
+    letter-spacing: 41px;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2);
+}
+
+.ui-slider:before {
+    top: -1.4rem;
+}
+
+.ui-slider:after {
+    bottom: -1.4rem;
+}
+
+.ui-slider-range {
+    background: transparent;
+}
+
+.ui-slider .ui-slider-handle {
+    top: -8px;
+    width: 35px;
+    height: 20px;
+    margin-left: -15px;
+    padding-left: 4px;
+    border: none;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 2px;
+    text-align: center;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 1.2rem;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    letter-spacing: 3px;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.ui-slider .ui-slider-handle:focus {
+    outline: none;
+}
+
+/* typo */
+.amount {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    font-family: 'Exo', sans-serif;
+    background: transparent;
+    font-size: 1.5rem;
+}
+
+#height__amount:focus {
+    outline: none;
+}
+
+/* base */
+#content {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding-top: 5rem;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.infExtra {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.YorN {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.chooseYes, .chooseNo {
+    font-size: 1.2rem;
+}
+.infExtra > span{
+    width: 350px;
+    font-size: 1.5rem;
+    text-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.noteExtra{
+    background-color: antiquewhite;
+    padding: 10px;
+    color: black;
+}
+#btn__next{
+    margin-bottom: 10%;
+    color: black;
+    padding: 15px 30px;
+}
+#btn__next:hover{
+    background-color: brown;
+    color: white;
+}
+
