@@ -1,0 +1,67 @@
+:root {
+  --text-color: white;
+  --font-size-label: 1.2rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  width: 70px;
+  height: 70px;
+}
+.foodNu_panel {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 470px;
+  margin-top: 10vh;
+}
+.food_img_head {
+  width: 100%;
+}
+
+.food_img_head img {
+  width: 100%;
+  height: auto;
+  filter: blur(0.7px);
+}
+
+.food_button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}   
+
+.image-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 300px;
+}
+
+.image-button img {
+  margin-right: 28px;
+}   
+.button-content label{
+    font-size: 20px;
+}
