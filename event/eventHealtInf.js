@@ -24,3 +24,4 @@ $(function() {
     $(".ui-slider-handle").text("<>");
     $( "#amount_weight" ).val($( "#weight__slider-range-min" ).slider( "value") + "kg");
   });
+  ////
