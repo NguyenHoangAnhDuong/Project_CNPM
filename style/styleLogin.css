@@ -83,3 +83,6 @@ label{
     font-size: var(--font-size-label);
     text-decoration: none;
 }
+#btnLogin{
+    padding: 10px 20px;
+}

@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#PanelMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: rgb(101, 101, 101);
+    padding: 3% 20px;
+    row-gap: 50px;
+    width: 450px;
+}
+.imageAvatar {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+.information {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 20px;
+    width: 100%;
+}
+.information_content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+.label {
+    font-size: 20px;
+    color: white;
+}
+.input{
+    font-size: 20px;
+    padding: 10px 20px; 
+    width: 100%;
+}
+.panelbtnChange{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.button{
+   padding: 5px 10px; 
+}
+.button:active{
+    scale: 0.99;
+}
