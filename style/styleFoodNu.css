@@ -14,10 +14,20 @@ body {
 }
 
 .foodNu_panel {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 600px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+  rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+  rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Canh giữa toàn bộ nội dung */
+  align-items: stretch; /* Kéo căng toàn bộ nội dung theo chiều ngang */
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 90%; /* Sửa kích thước của panel */
+  max-width: 470px; /* Sửa kích thước của panel */
+  margin-top: 10vh;
+  background-color: #fff; /* Màu nền của panel */
+  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -30,14 +40,14 @@ body {
 .food_button {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* Canh giữa các button */
+  align-items: stretch; /* Kéo căng các button theo chiều ngang */
   background-color: #ffffff;
   padding: 20px;
 }
 
 .button-content {
-  width: 100%;
+  flex: 1; /* Chia đều không gian cho các button */
   margin-bottom: 10px;
 }
 

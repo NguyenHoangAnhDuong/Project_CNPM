@@ -1,0 +1,55 @@
+:root {
+  --text-color: #333; /* Màu chữ */
+  --font-size-label: 1.2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+.nutrition-panel {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 400px; /* Độ rộng tối đa */
+}
+
+h2 {
+  font-size: 24px;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.nutrition-info {
+  color: var(--text-color);
+  font-size: var(--font-size-label);
+}
+
+.nutrition-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.item-label {
+  font-weight: bold;
+  color: #666; /* Màu chữ mờ */
+}
+
+.item-value {
+  color: #007bff; /* Màu chữ tốt */
+  font-weight: bold;
+}

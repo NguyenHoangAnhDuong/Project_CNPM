@@ -2,6 +2,7 @@
   --text-color: rgb(0, 0, 0);
   --font-size-label: 1.2rem;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +18,7 @@ body {
   min-height: 100vh;
 }
 
-.health-assessment-panel {
+.progress-tracker-panel {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -32,29 +33,48 @@ body {
   background-color: #fff; /* Màu nền của panel */
   border-radius: 10px;
   overflow: hidden;
+  padding: 20px;
 }
 
-h1 {
-  margin-bottom: 20px;
+h2 {
+  font-size: 24px;
   color: var(--text-color);
+  margin-bottom: 20px;
 }
 
-table {
+.progress-form {
   width: 100%;
-  border-collapse: collapse;
 }
 
-th,
-td {
-  border: 1px solid #ddd;
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: var(--font-size-label);
+  color: var(--text-color);
+  margin-bottom: 5px;
+  display: block;
+}
+
+input[type="number"],
+input[type="text"] {
+  width: 100%;
   padding: 8px;
-  text-align: left;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-th {
-  background-color: #f2f2f2;
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+button:hover {
+  background-color: #0056b3;
 }
