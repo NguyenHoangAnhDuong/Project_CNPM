@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Progress Tracker</title>
+    <link rel="stylesheet" href="/style/trackProgress.css" />
+  </head>
+  <body>
+    <div class="progress-tracker-panel">
+      <h2>Theo dõi tiến độ sức khỏe</h2>
+      <form class="progress-form">
+        <div class="form-group">
+          <label for="day">Ngày:</label>
+          <input type="number" id="day" name="day" min="1" />
+        </div>
+        <div class="form-group">
+          <label for="bio-data">Dữ liệu sinh trắc học:</label>
+          <input
+            type="text"
+            id="bio-data"
+            name="bio-data"
+            placeholder="Nhập dữ liệu sinh trắc học (ví dụ: huyết áp, nhịp tim, nhiệt độ cơ thể)"
+          />
+        </div>
+        <div class="form-group">
+          <label for="lifestyle-habits">Thói quen lối sôngs :</label>
+          <input
+            type="text"
+            id="lifestyle-habits"
+            name="lifestyle-habits"
+            placeholder="Nhập thói quen sinh hoạt (ví dụ: mức dộ hoạt động, chế độ ăn uống, giải trí)"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exercise">Bài tập:</label>
+          <input
+            type="text"
+            id="exercise"
+            name="exercise"
+            placeholder="Nhập chi tiết bài tập"
+          />
+        </div>
+        <div class="form-group">
+          <label for="sleep">Ngủ:</label>
+          <input
+            type="text"
+            id="sleep"
+            name="sleep"
+            placeholder="Nhập chi tiết giấc ngủ"
+          />
+        </div>
+        <div class="form-group">
+          <label for="water-intake">Lượng nước uống:</label>
+          <input
+            type="text"
+            id="water-intake"
+            name="water-intake"
+            placeholder="Nhập chi tiết lượng nước uống"
+          />
+        </div>
+        <button type="submit">Lưu</button>
+      </form>
+    </div>
+  </body>
+</html>
