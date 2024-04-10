@@ -1,67 +1,81 @@
-:root {
-  --text-color: white;
-  --font-size-label: 1.2rem;
-}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
 }
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
 }
-img {
-  width: 70px;
-  height: 70px;
-}
+
 .foodNu_panel {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+  rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between; /* Canh giữa toàn bộ nội dung */
+  align-items: stretch; /* Kéo căng toàn bộ nội dung theo chiều ngang */
   background-repeat: no-repeat;
   background-size: cover;
-  width: 470px;
+  width: 90%; /* Sửa kích thước của panel */
+  max-width: 470px; /* Sửa kích thước của panel */
   margin-top: 10vh;
-}
-.food_img_head {
-  width: 100%;
+  background-color: #fff; /* Màu nền của panel */
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .food_img_head img {
   width: 100%;
-  height: auto;
-  filter: blur(0.7px);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .food_button {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: space-between; /* Canh giữa các button */
+  align-items: stretch; /* Kéo căng các button theo chiều ngang */
+  background-color: #ffffff;
+  padding: 20px;
 }
 
 .button-content {
-  display: flex;
-  align-items: center;
-  margin-bottom: 4px;
-}   
+  flex: 1; /* Chia đều không gian cho các button */
+  margin-bottom: 10px;
+}
 
 .image-button {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-right: 300px;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.image-button:hover {
+  background-color: #e0e0e0;
 }
 
 .image-button img {
-  margin-right: 28px;
-}   
-.button-content label{
-    font-size: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.image-button span {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
 }
