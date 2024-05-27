@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mục tiêu sức khỏe cá nhân</title>
+    <title>Điều chỉnh mục tiêu sức khỏe cá nhân</title>
     <link rel="stylesheet" type="text/css" href="../style/setHealthGoals.css" />
     <link
       rel="stylesheet"
@@ -12,8 +12,10 @@
 
   <body>
     <div class="nutrition-panel">
-      <button class="back" onclick="goBack()"><i class="fas fa-chevron-left"></i>Quay lại</button>
-      <h2>Đặt mục tiêu sức khỏe cá nhân</h2>
+      <button class="back" onclick="goBack()">
+        <i class="fas fa-chevron-left"></i>Quay lại
+      </button>
+      <h2>Điều chỉnh mục tiêu sức khỏe cá nhân</h2>
       <form>
         <label for="goal">Tiêu đề mục tiêu của bạn:</label>
         <input
@@ -68,15 +70,15 @@
         <label for="end_date">Ngày kết thúc:</label>
         <input type="date" id="end_date" name="end_date" required />
 
-        <button class="set-goal" type="submit">Đặt mục tiêu</button>
+        <button type="submit">Cập nhật</button>
       </form>
     </div>
-
     <script>
       $(document).ready(function () {
         $("form").submit(function (event) {
-          event.preventDefault();
-          window.location.href = "setupSuccessful.html";
+          // event.preventDefault();
+          alert("Cập nhật thành công")
+
         });
       });
       function goBack() {

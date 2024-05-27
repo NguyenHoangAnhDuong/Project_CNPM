@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<title>Form Nhập Liệu</title>
+<style>
+  .container {
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    width: 400px;
+    margin: 10vh auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    overflow: hidden;
+  }
+
+  .back {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #4caf50; /* Màu sắc của nút */
+  }
+
+  .back:hover {
+    color: #7bb97e; /* Màu sắc khi di chuột qua nút */
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+
+</style>
+</head>
+<body>
+<div class="container">
+  <button class="back"><i class="fas fa-chevron-left"></i>Quay lại</button> <!-- Xóa văn bản "Quay lại" -->
+  <!-- Sử dụng biểu tượng thích hợp của Font Awesome -->
+
+  <h2>Nhập liệu cân nặng, chiều cao và giấc ngủ</h2>
+  <form action="/submit-data" method="post">
+    <label for="weight">Cân Nặng (kg):</label>
+    <input type="number" id="weight" name="weight" min="0" required />
+
+    <label for="height">Chiều Cao (cm):</label>
+    <input type="number" id="height" name="height" min="0" required />
+
+    <label for="sleep">Giấc Ngủ (giờ):</label>
+    <select id="sleep" name="sleep" required>
+      <option value="">Chọn số giờ ngủ</option>
+      <option value="5">Dưới 5 giờ</option>
+      <option value="5-7">5-7 giờ</option>
+      <option value="7-9">7-9 giờ</option>
+      <option value="9">Hơn 9 giờ</option>
+    </select>
+
+    <button type="submit">Gửi</button>
+  </form>
+</div>
+</body>
+</html>
