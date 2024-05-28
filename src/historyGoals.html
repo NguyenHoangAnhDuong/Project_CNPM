@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lịch sử mục tiêu sức khỏe</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa; /* Màu nền */
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Chỉnh màu sắc và padding cho nutrition-panel */
+      .nutrition-panel {
+        max-width: 100%;
+        margin: 20px;
+        background-color: #ffffff; /* Màu nền */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Chỉnh màu sắc và border-bottom cho header của bảng */
+      th {
+        background-color: #007bff; /* Màu nền */
+        color: #fff; /* Màu chữ */
+        border-bottom: 2px solid #ddd;
+      }
+
+      /* Chỉnh màu sắc cho các hàng chẵn */
+      tr:nth-child(even) {
+        background-color: #f2f2f2; /* Màu nền */
+      }
+
+      /* Chỉnh màu sắc và border-bottom cho các ô của bảng */
+      td {
+        border-bottom: 1px solid #ddd;
+      }
+
+      /* Chỉnh màu nền, màu chữ, padding và border-radius cho button */
+      button {
+        background-color: #28a745; /* Màu nền */
+        color: #fff; /* Màu chữ */
+        padding: 8px 12px; /* Padding */
+        border: none; /* Xóa border */
+        border-radius: 4px; /* Bo góc */
+        cursor: pointer;
+        margin: 2px;
+      }
+
+      .remove {
+        background-color: #da1111; /* Màu nền */
+      }
+      .remove:hover {
+        background-color: #8d120a; /* Màu nền hover */
+      }
+
+      .back {
+        color: black;
+        background-color: #ffffff;
+        margin-bottom: 10px;
+      }
+      .back:hover {
+        color: #058626;
+        background-color: #fff;
+      }
+
+      /* Hover effect cho button */
+      button:hover {
+        background-color: #218838; /* Màu nền hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nutrition-panel">
+      <button class="back" onclick="goBack()">
+        <i class="fas fa-chevron-left"></i>Quay lại
+      </button>
+      <h2>Lịch sử mục tiêu sức khỏe</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Tiêu đề mục tiêu</th>
+            <th>Cân nặng (kg)</th>
+            <th>Chiều cao (cm)</th>
+            <th>Lượng giấc ngủ (giờ)</th>
+            <th>Tình trạng sức khỏe hiện tại</th>
+            <th>Ngày bắt đầu</th>
+            <th>Ngày kết thúc</th>
+            <th>Trạng thái nhập liệu</th>
+            <th>Tiến độ (%)</th>
+            <th colspan="3">Thao tác</th>
+            <!-- Thêm cột cho button điều chỉnh và xóa -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mục tiêu 1</td>
+            <td>65 / 80</td>
+            <td>170 / 180</td>
+            <td>8 / 10</td>
+            <td>Good / Good</td>
+            <td>2024-05-26</td>
+            <td>2024-06-26</td>
+            <td>Đã nhập</td>
+            <td>81.25%</td>
+            <td><button class="remove">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>Mục tiêu 2</td>
+            <td>0 / 75</td>
+            <td>0 / 170</td>
+            <td>0 / 8</td>
+            <td>None / Normal</td>
+            <td>2024-05-20</td>
+            <td>2024-07-20</td>
+            <td>Chưa nhập</td>
+            <td>0%</td>
+            <td><button class="remove">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>Mục tiêu 3</td>
+            <td>60 / 70</td>
+            <td>165 / 160</td>
+            <td>9 / 8</td>
+            <td>Good / Bad</td>
+            <td>2024-06-01</td>
+            <td>2024-07-01</td>
+            <td>Đã nhập</td>
+            <td>75%</td>
+            <td><button class="remove">Xóa</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script>
+      $(document).ready(function () {
+        // Khi người dùng click vào button xóa thì sẽ xóa đi mục tiêu đã hoàn thành hoặc hết hạn trong phần lịch sử
+        $(".remove").click(function () {
+          var confirmation = confirm("Bạn có chắc muốn xóa không?");
+          if (confirmation) {
+            $(this).closest("tr").remove();
+          }
+        });
+        $(".back").click(function () {
+          window.location.href = "healthGoals.html";
+        });
+      });
+    </script>
+  </body>
+</html>
