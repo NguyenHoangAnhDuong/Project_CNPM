@@ -2,17 +2,93 @@
 <html>
   <head>
     <title>Điều chỉnh mục tiêu sức khỏe cá nhân</title>
-    <link rel="stylesheet" type="text/css" href="../style/setHealthGoals.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../style/setHealthGoals.css" /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.nutrition-panel {
+  max-width: 470px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.back {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.back i {
+  margin-right: 5px;
+}
+
+.back:hover{
+  color: #4caf50;
+}
+
+h2 {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  font-size: 16px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+    </style>
   </head>
 
   <body>
     <div class="nutrition-panel">
-      <button class="back" onclick="goBack()">
+      <button class="back">
         <i class="fas fa-chevron-left"></i>Quay lại
       </button>
       <h2>Điều chỉnh mục tiêu sức khỏe cá nhân</h2>
@@ -75,15 +151,35 @@
     </div>
     <script>
       $(document).ready(function () {
+        var today = new Date().toISOString().split("T")[0];
+        $("#start_date").attr("min", today); // Set min attribute to today
+
+        $("#start_date").change(function () {
+          var selectedDate = new Date($(this).val());
+          var todayDate = new Date(today);
+
+          // Kiểm tra nếu ngày được chọn nhỏ hơn ngày hôm nay
+          if (selectedDate < todayDate) {
+            alert("Vui lòng chọn ngày hôm nay hoặc sau ngày hôm nay.");
+            $(this).val(today); // Thiết lập lại ngày bắt đầu thành ngày hôm nay
+          }
+
+          // Set min value for end_date to one day after start_date
+          var nextDay = new Date(selectedDate);
+          nextDay.setDate(selectedDate.getDate() + 1);
+          var minEndDate = nextDay.toISOString().split("T")[0];
+          $("#end_date").attr("min", minEndDate);
+        });
         $("form").submit(function (event) {
           // event.preventDefault();
           alert("Cập nhật thành công")
 
         });
+        $(".back").click(function () {
+          window.location.href = "informationHealthGoals.html";
+        });
       });
-      function goBack() {
-        window.history.back();
-      }
+     
     </script>
   </body>
 </html>

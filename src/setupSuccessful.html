@@ -1,79 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Container Example</title>
-<style>
-  /* CSS cho container */
-  .container {
-    position: relative;
-    width: 80%; /* Sử dụng phần trăm để làm cho container linh hoạt hơn */
-    max-width: 470px; /* Giới hạn chiều rộng tối đa của container */
-    margin: 10vh auto; /* Căn giữa container theo chiều dọc */
-    padding: 20px; /* Tạo khoảng cách với nội dung bên trong */
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-    background-color: #fff; /* Màu nền của container */
-    overflow: hidden;
-    transition: transform 0.3s ease; /* Hiệu ứng chuyển đổi container */
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Container Example</title>
+    <style>
+      /* CSS cho container */
+      .container {
+        position: relative;
+        width: 80%; /* Sử dụng phần trăm để làm cho container linh hoạt hơn */
+        max-width: 470px; /* Giới hạn chiều rộng tối đa của container */
+        margin: 10vh auto; /* Căn giữa container theo chiều dọc */
+        padding: 20px; /* Tạo khoảng cách với nội dung bên trong */
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        background-color: #fff; /* Màu nền của container */
+        overflow: hidden;
+        transition: transform 0.3s ease; /* Hiệu ứng chuyển đổi container */
+      }
 
-  /* CSS khi hover vào container */
-  .container:hover {
-    transform: translateY(-5px); /* Di chuyển container lên trên khi hover */
-  }
+      /* CSS khi hover vào container */
+      .container:hover {
+        transform: translateY(
+          -5px
+        ); /* Di chuyển container lên trên khi hover */
+      }
 
-  /* CSS cho phần nội dung bên trong container */
-  .container .content {
-    /* Bạn có thể thêm CSS cho nội dung bên trong container tại đây */
-    text-align: center; /* Căn giữa nội dung theo chiều ngang */
-  }
+      /* CSS cho phần nội dung bên trong container */
+      .container .content {
+        /* Bạn có thể thêm CSS cho nội dung bên trong container tại đây */
+        text-align: center; /* Căn giữa nội dung theo chiều ngang */
+      }
 
-  /* CSS cho tiêu đề */
-  .container .content h2 {
-    color: #333; /* Màu chữ của tiêu đề */
-    margin-bottom: 10px; /* Khoảng cách giữa tiêu đề và nội dung bên dưới */
-  }
+      /* CSS cho tiêu đề */
+      .container .content h2 {
+        color: #333; /* Màu chữ của tiêu đề */
+        margin-bottom: 10px; /* Khoảng cách giữa tiêu đề và nội dung bên dưới */
+      }
 
-  /* CSS cho nội dung chính */
-  .container .content p {
-    color: #666; /* Màu chữ của nội dung */
-    line-height: 1.6; /* Độ cao dòng cho nội dung */
-  }
+      /* CSS cho nội dung chính */
+      .container .content p {
+        color: #666; /* Màu chữ của nội dung */
+        line-height: 1.6; /* Độ cao dòng cho nội dung */
+      }
 
-  /* CSS cho nút "Quay về" */
-  .container .content .home {
-    background-color: #388e3c; /* Màu nền của nút */
-    color: #fff; /* Màu chữ của nút */
-    padding: 10px 20px; /* Kích thước padding */
-    border: none; /* Không có đường viền */
-    border-radius: 5px; /* Bo tròn góc */
-    cursor: pointer; /* Con trỏ khi di chuột qua */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng hover mượt mà */
-  }
+      /* CSS cho nút "Quay về" */
+      .container .content .home {
+        background-color: #388e3c; /* Màu nền của nút */
+        color: #fff; /* Màu chữ của nút */
+        padding: 10px 20px; /* Kích thước padding */
+        border: none; /* Không có đường viền */
+        border-radius: 5px; /* Bo tròn góc */
+        cursor: pointer; /* Con trỏ khi di chuột qua */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng hover mượt mà */
+      }
 
-  /* CSS hover vào nút "Quay về" */
-  .container .content .home:hover {
-    background-color: #fff; /* Màu nền của nút khi hover */
-    color: #388e3c; /* Màu chữ của nút khi hover */
-  }
-</style>
-</head>
-<body>
-
-<div class="container">
-  <div class="content">
-    <!-- Nội dung của bạn ở đây -->
-    <h2>Successfully!!!</h2>
-    <p>Mục tiêu của bạn đã được thiết lập.</p>
-    <button class="home" onclick="goBack()">Quay về</button>
-  </div>
-</div>
-<script>
-  function goBack(){
-    window.history.back();
-  }
-</script>
-</body>
+      /* CSS hover vào nút "Quay về" */
+      .container .content .home:hover {
+        background-color: #fff; /* Màu nền của nút khi hover */
+        color: #388e3c; /* Màu chữ của nút khi hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <!-- Nội dung của bạn ở đây -->
+        <h2>Successfully!!!</h2>
+        <p>Mục tiêu của bạn đã được thiết lập.</p>
+        <button class="home">Quay về</button>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $(".home").click(function () {
+          window.location.href = "healthGoals.html";
+        });
+      });
+    </script>
+  </body>
 </html>
