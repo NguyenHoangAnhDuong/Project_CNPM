@@ -1,70 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="../image/Logo_HCMUAF.svg"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      href="../vendor/bootstrap-5.0.2-dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="../vendor/fontawesome-free-6.5.1-web/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css"
-    />
-    <link rel="stylesheet" href="../style/styleHealthInf.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <script src="../event/eventHealtInf.js"></script>
-    <title>Health Information</title>
-  </head>
 
-  <body>
-    <div id="Panel">
-      <div class="content__Title">
-        <span class="title">Thông tin sức khỏe</span>
-      </div>
-      <form action="" class="information">
-        <div class="height range">
-          <label for="height__input">Chiều cao</label>
-          <section id="height_content" class="content">
-            <input type="text" id="amount_height" class="amount" />
-            <div class="cube">
-              <div id="height__slider-range-min" class="slider-range-min"></div>
-            </div>
-          </section>
-        </div>
-        <div class="weight range">
-          <label for="weight__input">Cân nặng</label>
-          <section id="weight_content" class="content">
-            <input type="text" id="amount_weight" class="amount" />
-            <div class="cube">
-              <div id="weight__slider-range-min" class="slider-range-min"></div>
-            </div>
-          </section>
-        </div>
-        <div class="infExtra">
-          <span>Có bị mắc bệnh về đường tiêu hóa và tim mạch hay không?</span>
-          <div class="YorN">
-            <div class="chooseYes">
-              <input type="radio" id="Yes" name="op" />
-              <label for="Yes">Có</label>
-            </div>
-            <div class="chooseNo">
-              <input type="radio" id="No" name="op" />
-              <label for="No">Không</label>
-            </div>
-            <button id="btn__next" type="submit">Đăng ký</button>
-            <a href="../src/login.html" class="revertLogin"><i class="fa-solid fa-arrow-left"></i>Trở về trang đăng nhập</a>
-        </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="../image/Logo_HCMUAF.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="../vendor/bootstrap-5.0.2-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../vendor/fontawesome-free-6.5.1-web/css/all.min.css" />
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" href="../style/styleHealthInf.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+  <script src="../event/eventHealtInf.js"></script>
+  <title>Health Information</title>
+</head>
+
+<body>
+  <div id="Panel">
+    <div class="content__Title">
+      <span class="title">Thông tin sức khỏe</span>
     </div>
-  </body>
+    <form id="healthForm" action="" class="information">
+      <div class="height range">
+        <label for="height__input">Chiều cao (cm)</label>
+        <section id="height_content" class="content">
+          <input type="text" id="amount_height" class="amount" />
+          <div class="cube">
+            <div id="height__slider-range-min" class="slider-range-min"></div>
+          </div>
+        </section>
+      </div>
+      <div class="weight range">
+        <label for="weight__input">Cân nặng (kg)</label>
+        <section id="weight_content" class="content">
+          <input type="text" id="amount_weight" class="amount" />
+          <div class="cube">
+            <div id="weight__slider-range-min" class="slider-range-min"></div>
+          </div>
+        </section>
+      </div>
+      <button id="btn__next" type="submit">Nhận đánh giá</button>
+    </form>
+    <div id="resultPanel" class="result-panel"
+      style="display: none; margin-top: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+      <h3>Kết quả đánh giá</h3>
+      <p id="bmiResult"></p>
+    </div>
+  </div>
+  <script>
+    document.getElementById('healthForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const height = parseFloat(document.getElementById('amount_height').value) / 100;
+      const weight = parseFloat(document.getElementById('amount_weight').value);
+
+      if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+        alert("Vui lòng nhập giá trị hợp lệ cho chiều cao và cân nặng.");
+        return;
+      }
+
+      const bmi = weight / (height * height);
+      let evaluation = "";
+      if (bmi < 18.5) {
+        evaluation = "Có vẻ như bạn khá gầy. Bạn nên xem lại sức khỏe của bạn nhé. Hãy để chúng tôi làm điều đó giúp bạn";
+      } else if (bmi < 24.9) {
+        evaluation = "Bạn có một chỉ số khá chuẩn, nếu bạn muốn cải thiện theo hướng tích cực hơn hãy để chúng tôi giúp bạn";
+      } else if (bmi < 29.9) {
+        evaluation = "Có vẻ như cân nặng của bạn đang vượt quá mức bình thường, chúng ta hãy cùng nhua cải thiện chúng nhé";
+      } else {
+        evaluation = "Bạn bị béo phì rồi, hãy kiểm soát lại lượng thức ăn và lượng calo tiêu thụ thôi, chúng ta hãy cùng thực hiện nó nào";
+      }
+
+      document.getElementById('bmiResult').innerText = `Chỉ số BMI của bạn là ${bmi.toFixed(2)}.
+       ${evaluation}`;
+      document.getElementById('resultPanel').style.display = 'block';
+      document.getElementById('healthForm').style.display = 'none';
+    });
+  </script>
+</body>
+
 </html>
