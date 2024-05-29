@@ -153,7 +153,7 @@ button[type="submit"]:hover {
     <script>
       $(document).ready(function () {
         var today = new Date().toISOString().split("T")[0];
-        $("#start_date").attr("min", today); // Set min attribute to today
+        $("#start_date").attr("min", today); // Gán giá trị nhỏ nhất là ngày hôm nay
 
         $("#start_date").change(function () {
           var selectedDate = new Date($(this).val());
@@ -165,16 +165,18 @@ button[type="submit"]:hover {
             $(this).val(today); // Thiết lập lại ngày bắt đầu thành ngày hôm nay
           }
 
-          // Set min value for end_date to one day after start_date
+          // Đặt giá trị tối thiểu cho ngày kết thúc lớn hơn ngày hôm nay
           var nextDay = new Date(selectedDate);
           nextDay.setDate(selectedDate.getDate() + 1);
           var minEndDate = nextDay.toISOString().split("T")[0];
           $("#end_date").attr("min", minEndDate);
         });
+        // Khi bấm vào nút đặt mục tiêu thì thông báo thiết lập thành công
         $("form").submit(function (event) {
           event.preventDefault();
           window.location.href = "setupSuccessful.html";
         });
+        // Quay lại trang đặt mục tiêu sức khỏe
         $(".back").click(function () {
           window.location.href = "healthGoals.html";
         });

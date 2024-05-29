@@ -121,11 +121,11 @@
     <script>
       $(document).ready(function () {
         $("form").submit(function (event) {
-          // Ngăn chặn form gửi đi (chặn hành vi mặc định của form)
           event.preventDefault();
-          // Điều hướng sang trang khác
+          // Điều hướng sang trang xem thông tin mục tiêu
           window.location.href = "informationHealthGoals_RM.html";
         });
+        // Quay lại trang xem thông tin mục tiêu
         $(".back").click(function () {
           window.location.href = "informationHealthGoals.html";
         });
