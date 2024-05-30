@@ -21,6 +21,7 @@
       <span class="title">Thông tin sức khỏe</span>
     </div>
     <form id="healthForm" action="" class="information">
+      <!-- Enter height -->
       <div class="height range">
         <label for="height__input">Chiều cao (cm)</label>
         <section id="height_content" class="content">
@@ -30,6 +31,7 @@
           </div>
         </section>
       </div>
+      <!-- Enter weight -->
       <div class="weight range">
         <label for="weight__input">Cân nặng (kg)</label>
         <section id="weight_content" class="content">
@@ -39,8 +41,10 @@
           </div>
         </section>
       </div>
+      <!-- button get result -->
       <button id="btn__next" type="submit">Nhận đánh giá</button>
     </form>
+  <!-- Show result -->
     <div id="resultPanel" class="result-panel"
       style="display: none; margin-top: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
       <h3>Kết quả đánh giá</h3>
@@ -50,27 +54,31 @@
   <script>
     document.getElementById('healthForm').addEventListener('submit', function (event) {
       event.preventDefault();
-
+    // get value form input
       const height = parseFloat(document.getElementById('amount_height').value) / 100;
       const weight = parseFloat(document.getElementById('amount_weight').value);
-
       if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
         alert("Vui lòng nhập giá trị hợp lệ cho chiều cao và cân nặng.");
         return;
       }
-
+      // BMI caculation
       const bmi = weight / (height * height);
+      //compare
       let evaluation = "";
       if (bmi < 18.5) {
+        //alert
         evaluation = "Có vẻ như bạn khá gầy. Bạn nên xem lại sức khỏe của bạn nhé. Hãy để chúng tôi làm điều đó giúp bạn";
       } else if (bmi < 24.9) {
+         //alert
         evaluation = "Bạn có một chỉ số khá chuẩn, nếu bạn muốn cải thiện theo hướng tích cực hơn hãy để chúng tôi giúp bạn";
       } else if (bmi < 29.9) {
+         //alert
         evaluation = "Có vẻ như cân nặng của bạn đang vượt quá mức bình thường, chúng ta hãy cùng nhua cải thiện chúng nhé";
       } else {
+         //alert
         evaluation = "Bạn bị béo phì rồi, hãy kiểm soát lại lượng thức ăn và lượng calo tiêu thụ thôi, chúng ta hãy cùng thực hiện nó nào";
       }
-
+      //show alert
       document.getElementById('bmiResult').innerText = `Chỉ số BMI của bạn là ${bmi.toFixed(2)}.
        ${evaluation}`;
       document.getElementById('resultPanel').style.display = 'block';
